@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+  <script src="https://kit.fontawesome.com/5dc75bc507.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+  <div class="col-md-12">
+			<div class="d-flex flex-wrap align-items-center checked">
+				<div class="float-right secret">
+
+				</div>
+			</div>
+	</div>
+  <div class="col-lg-2 mb-4">
+  	<nav class="navbar navbar-expand-lg facetedsearchnav navbar-light">
+  	  <button class="navbar-toggler facetedsearchbutton" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  		<img class="facetedsearchicon" src="facetedsearchicon.png">
+  	  </button>
+    	  <div class="collapse navbar-collapse" id="navbarNav">
+          <form action="file:///Users/michael/Documents/wd/faceted-search/index.html/" method="GET">
+          <button class="btn btn-sm btn-warning">Submit!</button>
+          <button type="button" class="btn btn-sm btn-danger uncheckall">Clear All</button>
+          <hr>
+          <div class="">
+            <h3>Type</h3>
+            <div class="choice-type">
+              <input type="checkbox" name="type" value="Restaurant" id="Restaurant">
+              <label for="Restaurant">Restaurant</label>
+            </div>
+
+            <div class="choice-type">
+              <input type="checkbox" name="type" value="Bar" id="Bar">
+              <label for="Bar">Bar</label>
+            </div>
+
+            <div class="choice-type">
+              <input type="checkbox" name="type" value="Cafe" id="Cafe">
+              <label for="Cafe">Cafe</label>
+            </div>
+            <hr>
+          </div>
+          <div class="">
+            <h3>MRT Line</h3>
+            <div class="choice-mrtline">
+              <input type="checkbox" name="mrtLine" value="Brown" id="Brown">
+              <label for="Brown">Brown</label>
+            </div>
+            <div class="choice-mrtline">
+              <input type="checkbox" name="mrtLine" value="Red" id="Red">
+              <label for="Red">Red</label>
+            </div>
+            <div class="choice-mrtline">
+              <input type="checkbox" name="mrtLine" value="Green" id="Green">
+              <label for="Green">Green</label>
+            </div>
+            <div class="choice-mrtline">
+              <input type="checkbox" name="mrtLine" value="Orange" id="Orange">
+              <label for="Orange">Orange</label>
+            </div>
+            <div class="choice-mrtline">
+              <input type="checkbox" name="mrtLine" value="Blue" id="Blue">
+              <label for="Blue">Blue</label>
+            </div>
+            <hr>
+          </div>
+          <div class="allmrtstations">
+            <h4>MRT Station</h4>
+            <div id="mrtinfo" class="mrtinfo">
+              Select an MRT Line to Show Stations
+            </div>
+            <div class="scrollBox">
+
+
+              <div class="stations brownstations" >
+                <table class="table brownstations">
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                          <input type="checkbox" name="mrtStation" value="Daan" id="Daan">
+                          <label for="Daan"></label>
+                      </div>
+                    </td>
+                  <td>Daan</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Dahu Park" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Dahu Park</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Dazhi" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Dazhi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Donghu" id="">
+                        <label for=""></label>
+                      </div>
+                    <td>Donghu</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Gangqian" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Gangqian</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Huzhou" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Huzhou</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Jiannan Road" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Jiannan Road</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Linguang" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Linguang</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Liuzhangli" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Liuzhangli</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Muzha" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Muzha</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Nangang Software Park" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Nangang Software Park</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Nanjing Fuxing" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Nanjing Fuxing</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Neihu" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Neihu</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Songshan Airport" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Songshan Airport</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Taipei Nangang Exhibition Center" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Taipei Nangang Exhibition Center</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Taipei Zoo" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Taipei Zoo</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Technology Building" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Technology Building</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Wanfang Community" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Wanfang Community</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Wende" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Wende</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Xihu" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Xihu</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Xinhai" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Xinhai</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Zhongshan Junior High School" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Zhongshan Junior High School</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Zhongxiao Fuxing" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Zhongxiao Fuxing</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="stations redstations">
+                <table class="table redstations">
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Beitou" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Beitou</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Chiang Kai-shek Memorial Hall" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Chiang Kai-shek Memorial Hall</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Daan" id="">
+                        <label for=""></label>
+                      </div>
+                    <td>Daan</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Daan Park" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Daan Park</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Dongmen" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Dongmen</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Fuxinggang" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Fuxinggang</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Guandu" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Guandu</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Hongshulin" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Hongshulin</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Jiantan" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Jiantan</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Mingde" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Mingde</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Minquan West Road" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Minquan West Road</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="NTU Hospital" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>NTU Hospital</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Qilian" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Qilian</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Qiyan" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Qiyan</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Shilin" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Shilin</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Shipai" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Shipai</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Shuanglian" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Shuanglian</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Taipei 101" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Taipei 101</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Taipei Main" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Taipei Main</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Tamsui" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Tamsui</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Xiangshan" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Xiangshan</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Xinbeitou" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Xinbeitou</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Xinyi Anhe" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Xinyi Anhe</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Yuanshan" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Yuanshan</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Zhishan" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Zhishan</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Zhongshan" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Zhongshan</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Zhongyi" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Zhongyi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Zhuwei" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Zhuwei</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="stations greenstations">
+                <table class="table greenstations">
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Beimen" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Beimen</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Chiang Kai-shek Memorial Hall" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Chiang Kai-shek Memorial Hall</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Gongguan" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Gongguan</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Guting" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Guting</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Jingmei" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Jingmei</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Nanjing Fuxing" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Nanjing Fuxing</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Nanjing Sanmin" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Nanjing Sanmin</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Qizhang" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Qizhang</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Songjiang Nanjing" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Songjiang Nanjing</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Taipei Arena" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Taipei Arena</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Taipower Building" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Taipower Building</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Wanlong" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Wanlong</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Xiaobitan" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Xiaobitan</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Xiaonanmen" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Xiaonanmen</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Ximen" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Ximen</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Xindian" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Xindian</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Xindian District Office" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Xindian District Office</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Zhongshan" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Zhongshan</td>
+                  </tr>
+                </table>
+
+              </div>
+              <div class="stations orangestations">
+                <table class="table orangestations">
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Cailiao" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Cailiao</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Danfeng" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Danfeng</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Daqiaotou" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Daqiaotou</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Dingxi" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Dingxi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Dongmen" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Dongmen</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Fu Jen University" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Fu Jen University</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Guting" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Guting</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Huilong" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Huilong</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Jingan" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Jingan</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Luzhou" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Luzhou</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Minquan West Road" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Minquan West Road</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Nanshijiao" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Nanshijiao</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Sanchong" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Sanchong</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Sanchong Elementary School" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Sanchong Elementary School</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Sanhe Junior High School" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Sanhe Junior High School</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Sanmin Senior High School" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Sanmin Senior High School</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Songjiang Nanjing" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Songjiang Nanjing</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="St Ignatius High School" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>St Ignatius High School</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Taipei Bridge" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Taipei Bridge</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Touqianzhuang" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Touqianzhuang</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Xianse Temple" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Xianse Temple</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Xingtian Temple" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Xingtian Temple</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Xinzhuang" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Xinzhuang</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Yongan Market" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Yongan Market</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Zhongshan Elementary School" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Zhongshan Elementary School</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Zhongxiao Xinsheng" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Zhongxiao Xinsheng</td>
+                  </tr>
+                </table>
+
+              </div>
+              <div class="stations bluestations">
+                <table class="table bluestations">
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Banqiao" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Banqiao</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Dingpu" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Dingpu</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Far Eastern Hospital" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Far Eastern Hospital</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Fuzhong" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Fuzhong</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Haishan" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Haishan</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Houshanpi" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Houshanpi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Kunyang" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Kunyang</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Longshan Temple" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Longshan Temple</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Nangang" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Nangang</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Shandao Temple" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Shandao Temple</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Sun Yat-sen Memorial Hall" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Sun Yat-sen Memorial Hall</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Taipei City Hall" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Taipei City Hall</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Taipei Main Station" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Taipei Main Station</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Taipei Nangang Exhibition Center" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Taipei Nangang Exhibition Center</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Tucheng" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Tucheng</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Ximen" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Ximen</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Xinpu" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Xinpu</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Yongchun" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Yongchun</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Yongning" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Yongning</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Zhongxiao Dunhua" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Zhongxiao Dunhua</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Zhongxiao Fuxing" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Zhongxiao Fuxing</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="choice-mrtstation">
+                        <input type="checkbox" name="mrtStation" value="Zhongxiao Xinsheng" id="">
+                        <label for=""></label>
+                      </div>
+                    </td>
+                    <td>Zhongxiao Xinsheng</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </form>
+
+
+  	    </div>
+  	</nav>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="index.js" type="text/javascript"></script>
+</body>
+</html>

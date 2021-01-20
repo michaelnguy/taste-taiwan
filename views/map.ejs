@@ -1,0 +1,116 @@
+<%- include("./partials/header") %>
+
+
+	<div class="container fill">	
+		<h4>
+			Find Restaurants Near Your Location
+		</h4>	
+		<div id="map"></div>
+    <script>
+      // Note: This example requires that you consent to location sharing when
+      // prompted by your browser. If you see the error "The Geolocation service
+      // failed.", it means you probably did not give permission for the browser to
+      // locate you.
+      var map, infoWindow;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 25.041301, lng: 121.543813},
+          zoom: 14
+        });
+        infoWindow = new google.maps.InfoWindow;
+
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Your Location');
+            infoWindow.open(map);
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+		 <% for(var i = 0; i < campgrounds.length; i++) { %>
+		      
+			 var lat = <%= campgrounds[i].lat %>;
+		     var lng = <%= campgrounds[i].lng %>;			
+		     var center = {lat: lat, lng: lng };		
+			
+		 	var contentString = `<a target="_blank" href="/places/<%= campgrounds[i]._id %>"><strong><%= campgrounds[i].name %> - <%= campgrounds[i].chineseName %></strong></a><br/>
+					<%= campgrounds[i].category %> - <%= campgrounds[i].price %><br/>
+					<%	if(campgrounds[i].stars === "1") { %>
+					<img class="marker-stars" src="/images/stars/one-star.png"><br/>	
+					<% } else if (campgrounds[i].stars === "1.5") { %>
+					<img class="marker-stars" src="/images/stars/one-and-half-star.png"><br/>	
+					<% } else if (campgrounds[i].stars === "2") { %>
+					<img class="marker-stars" src="/images/stars/two-star.png"><br/>
+					<% } else if (campgrounds[i].stars === "2.5") { %>
+					<img class="marker-stars" src="/images/stars/two-and-half-star.png"><br/>				
+					<% } else if (campgrounds[i].stars === "3") { %>
+					<img class="marker-stars" src="/images/stars/three-star.png"><br/>				
+					<% } else if (campgrounds[i].stars === "3.5") { %>
+					<img class="marker-stars" src="/images/stars/three-and-half-star.png"><br/>
+					<% } else if (campgrounds[i].stars === "4") { %>
+					<img class="marker-stars" src="/images/stars/four-star.png"><br/>
+					<% } else if (campgrounds[i].stars === "4.5") { %>
+					<img class="marker-stars" src="/images/stars/four-and-half-star.png"><br/>
+					<% } else if (campgrounds[i].stars === "5") { %>
+					<img class="marker-stars" src="/images/stars/five-star3.png"><br/>
+					<% } %>
+					<a href="https://www.google.com/maps/search/<%= campgrounds[i].location %>" target="_blank">Directions</a></li><br/>
+					<a target="_blank" class="btn btn-primary btn-sm" href="/places/<%= campgrounds[i]._id %>">More info</a>`;		
+	
+		
+			var infowindow = new google.maps.InfoWindow({
+      			html: contentString,
+				maxWidth: 170
+    		});
+    		
+			var marker = new google.maps.Marker({
+       			 position: center,
+        		 map: map,
+				 });
+    		
+			// add an event listener for this marker
+			bindInfoWindow(marker, map, infowindow, contentString);	
+			
+		  	
+		<% } %>	 
+		  
+      }
+
+		function bindInfoWindow(marker, map, infowindow, contentString) {
+			marker.addListener('click', function() {
+			infowindow.setContent(contentString);
+			infowindow.open(map, this);
+			});
+		}	
+		
+		
+		
+		//handlelocationerror Function
+      	function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+			infoWindow.setPosition(pos);
+			infoWindow.setContent(browserHasGeolocation ?
+								  'Error: The Geolocation service failed.' :
+								  'Error: Your browser doesn\'t support geolocation.');
+			infoWindow.open(map);
+			}
+		
+    </script>
+		
+
+
+		<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTunrBpdg9D-AyhdfA-2fvCB4IAKIKwAo&callback=initMap">
+		</script>
+
+<%- include("./partials/footer") %>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<!-- Make site responsive on mobile/tablet -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Taste-Taiwan</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+		<script src="https://kit.fontawesome.com/5dc75bc507.js" crossorigin="anonymous"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="/stylesheets/main4.css">
+		<link rel="stylesheet" href="/stylesheets/show3.css">
+		<!--jQuery and galleria framework scripts-->
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.5.7/galleria.min.js"></script>
+	</head>
+	
+	
+	<body>
+		
+		<nav class="navbar navbar-expand-md navbar-light mb-3">
+	
+		  <a class="navbar-brand" href="/"><img src="/images/rice.png"> TASTE TAIWAN</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarCollapse">
+			<ul class="navbar-nav mr-auto">
+			  <li class="nav-item" "<%= typeof page !== 'undefined' && page === 'campgrounds' ? 'active' : '' %>"><a class="nav-link" href="/">Home</a></li>
+			  <li class="nav-item" "<%= typeof page !== 'undefined' && page === 'map' ? 'active' : '' %>"><a class="nav-link" href="/map">Map</a></li>			  
+			  <li class="nav-item dropdown">
+            	<a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
+            	<div class="dropdown-menu" aria-labelledby="dropdown01">
+              	<a class="dropdown-item" href="#">Taiwanese Food</a>
+				<a class="dropdown-item" href="#">Best Of</a>
+              	<a class="dropdown-item" href="#">Tips For Travellers</a>
+              	<a class="dropdown-item" "<%= typeof page !== 'undefined' && page === 'contact' ? 'active' : '' %>" href="/contact">Contact</a>
+            	</div>
+          	  </li>
+			</ul>
+			<form class="form-inline pr-2" action="/" method="GET">
+				<div class="input-group">
+					<input type="text" class="form-control border border-right-0" name="search" placeholder="Search...">
+					<span class="input-group-append">
+						<button class="btn btn-dark border border-left-0" type="submit">
+							<i class="fa fa-search"></i>
+						</button>
+					</span>
+				</div>
+			</form>
+			
+			<ul class="navbar-nav">
+			  <% if(!currentUser){ %>
+			  <li class="nav-item" "<%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %>"><a href="/login" class="nav-link">Login</a></li>
+			  <li class="nav-item" "<%= typeof page !== 'undefined' && page === 'register' ? 'active' : '' %>"><a href="/register" class="nav-link">Sign Up</a></li>
+			  <% } else { %>
+			  <li class="nav-item"><a href="#" class="nav-link">Signed In As <%= currentUser.username %></a></li>
+			  <li class="nav-item"><a href="/logout" class="nav-link">Logout</a></li>
+			  <% } %>
+			</ul>
+		  </div>
+		</nav>
+		
+		
+		<!-- flash messages -->
+		<div class="container-fill">
+			<% if(error && error.length > 0){ %>
+				<div class="alert alert-danger" role="alert">
+					<%= error %>
+				</div>
+			<% } %>
+			<% if(success && success.length > 0){ %>
+				<div class="alert alert-success" role="alert">
+					<%= success %>			
+				</div>
+			<% } %>
+		</div>
+
+	<script>    
+		  var map, infoWindow;
+		  window.onload = function () {
+						initMap();
+					};
+		function initMap() {
+			map = new google.maps.Map(document.getElementById('map'), {
+			  center: {lat: 25.041301, lng: 121.543813},
+			  zoom: 14
+			});
+			// infoWindow = new google.maps.InfoWindow;
+			var infoWindow = new google.maps.InfoWindow(); 
+			// Try HTML5 geolocation.
+			if (navigator.geolocation) {
+			  navigator.geolocation.getCurrentPosition(function(position) {
+				var pos = {
+				  lat: position.coords.latitude,
+				  lng: position.coords.longitude
+				};
+				infoWindow.setPosition(pos);
+				infoWindow.setContent('Your location');
+				infoWindow.open(map);
+				map.setCenter(pos);
+			  }, function() {
+				handleLocationError(true, infoWindow, map.getCenter());
+			  });
+			} else {
+			  // Browser doesn't support Geolocation
+			  handleLocationError(false, infoWindow, map.getCenter());
+			}
+			  function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+				infoWindow.setPosition(pos);
+				infoWindow.setContent(browserHasGeolocation ?
+					'Error: The Geolocation service failed.' :
+					'Error: Your browser doesn\'t support geolocation.');
+				infoWindow.open(map);
+				}    
+			  
+			
+				<% for(var i = 0; i < campgrounds.length; i++) { %>
+				 var lat = <%= campgrounds[i].lat %>;
+				 var lng = <%= campgrounds[i].lng %>;			
+				 var center = {lat: lat, lng: lng };		
+				 var contentString = `<a target="_blank" href="/places/<%= campgrounds[i]._id %>"><strong><%= campgrounds[i].name %> - <%= campgrounds[i].chineseName %></strong></a><br/>
+					<%= campgrounds[i].category %> - <%= campgrounds[i].price %><br/>
+					<%	if(campgrounds[i].stars === "1") { %>
+					<img class="marker-stars" src="/images/stars/one-star.png"><br/>	
+					<% } else if (campgrounds[i].stars === "1.5") { %>
+					<img class="marker-stars" src="/images/stars/one-and-half-star.png"><br/>	
+					<% } else if (campgrounds[i].stars === "2") { %>
+					<img class="marker-stars" src="/images/stars/two-star.png"><br/>
+					<% } else if (campgrounds[i].stars === "2.5") { %>
+					<img class="marker-stars" src="/images/stars/two-and-half-star.png"><br/>				
+					<% } else if (campgrounds[i].stars === "3") { %>
+					<img class="marker-stars" src="/images/stars/three-star.png"><br/>				
+					<% } else if (campgrounds[i].stars === "3.5") { %>
+					<img class="marker-stars" src="/images/stars/three-and-half-star.png"><br/>
+					<% } else if (campgrounds[i].stars === "4") { %>
+					<img class="marker-stars" src="/images/stars/four-star.png"><br/>
+					<% } else if (campgrounds[i].stars === "4.5") { %>
+					<img class="marker-stars" src="/images/stars/four-and-half-star.png"><br/>
+					<% } else if (campgrounds[i].stars === "5") { %>
+					<img class="marker-stars" src="/images/stars/five-star3.png"><br/>
+					<% } %>
+					<a href="https://www.google.com/maps/search/<%= campgrounds[i].location %>" target="_blank">Directions</a></li><br/>
+					<a target="_blank" class="btn btn-primary btn-sm" href="/places/<%= campgrounds[i]._id %>">More info</a>`		
+				var infowindow = new google.maps.InfoWindow({
+					html: contentString,
+					maxWidth: 170
+				});
+				var marker = new google.maps.Marker({
+					 position: center,
+					 map: map,
+					 
+					 });
+				// add an event listener for this marker
+				bindInfoWindow(marker, map, infowindow, contentString);	
+			  <% } %>	
+			} 
+			
+		   
+		</script>	
+		

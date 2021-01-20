@@ -1,0 +1,248 @@
+<%- include("../partials/header") %>
+
+<div class="container">
+	<div class="row">
+		
+		<div class="col-md-8 offset-md-2 text-center">
+		<h1>Create a New Place</h1>		
+				<form action="/places" method="POST">
+					<div class="row">
+						<div class="form-group col">
+							<input class="form-control" type="text" name="name" placeholder="name">
+						</div>
+						<div class="form-group col">
+							<input class="form-control" type="text" name="chineseName" placeholder="chineseName">
+						</div>
+					</div>	
+					<div class="row">
+						<div class="form-group col">
+							<input class="form-control" type="text" name="type" placeholder="type">
+						</div>
+						<div class="form-group col">
+							<input class="form-control" type="text" name="category" placeholder="category">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="location">Location</label>
+						<input class="form-control" type="text" name="location" id="location" placeholder="Yosemite National Park, CA">
+					</div>	
+					<div class="row">
+						<div class="form-group col">
+							<input class="form-control" type="text" name="mrtLine" placeholder="mrtLine">
+						</div>
+						<div class="form-group col">
+							<input class="form-control" type="text" name="mrtStation" placeholder="mrtStation">
+						</div>	
+							
+					</div>
+					<div class="row">
+						<div class="form-group col">
+							<input class="form-control" type="text" name="stars" placeholder="stars">
+						</div>
+						<div class="form-group col">					   	  
+							  <select class="custom-select" id="inputGroupSelect01" name="price">							
+								<option selected="$">$</option>
+								<option value="$$">$$</option>
+								<option value="$$$">$$$</option>
+								<option value="$$$$">$$$$</option>
+							  </select>
+						</div>
+					</div>
+					<div class="form-group">
+						<textarea class="form-control" rows="5" name="description"></textarea>
+					</div>					
+					<div class="form-group">
+						<input class="form-control" type="text" name="indexImage" placeholder="Index Image">
+					</div>
+					<div class="row">
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image1url" placeholder="image1url">
+						</div>
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image1attributes" placeholder="image1attributes">
+						</div>						
+					</div>
+					<div class="row">
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image2url" placeholder="image2url">
+						</div>
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image2attributes" placeholder="image2attributes">
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image3url" placeholder="image3url">
+						</div>
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image3attributes" placeholder="image3attributes">
+						</div>
+					</div>
+					<div class="row">		
+
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image4url" placeholder="image4url">
+						</div>
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image4attributes" placeholder="image4attributes">
+						</div>
+					</div>
+					<div class="row">
+
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image5url" placeholder="image5url">
+						</div>
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image5attributes" placeholder="image5attributes">
+						</div>
+
+					</div>
+					<div class="row">
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image6url" placeholder="image6url">
+						</div>
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image6attributes" placeholder="image6attributes">
+						</div>
+
+					</div>
+					<div class="row">
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image7url" placeholder="image7url">
+						</div>
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image7attributes" placeholder="image7attributes">
+						</div>
+
+					</div>
+					<div class="row">
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image8url" placeholder="image8url">
+						</div>
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image8attributes" placeholder="image8attributes">
+						</div>
+
+					</div>
+					<div class="row">
+					
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image9url" placeholder="image9url">
+						</div>
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image9attributes" placeholder="image9attributes">
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image10url" placeholder="image10url">
+						</div>
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image10attributes" placeholder="image10attributes">
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image11url" placeholder="image11url">
+						</div>
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image11attributes" placeholder="image11attributes">
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image12url" placeholder="image12url">
+						</div>
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image12attributes" placeholder="image12attributes">
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image13url" placeholder="image13url">
+						</div>
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image13attributes" placeholder="image13attributes">
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image14url" placeholder="image14url">
+						</div>
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image14attributes" placeholder="image14attributes">
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image15url" placeholder="image15url">
+						</div>
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image15attributes" placeholder="image15attributes">
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image16url" placeholder="image16url">
+						</div>
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image16attributes" placeholder="image16attributes">
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image17url" placeholder="image17url">
+						</div>
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image17attributes" placeholder="image17attributes">
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image18url" placeholder="image18url">
+						</div>
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image18attributes" placeholder="image18attributes">
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image19url" placeholder="image19url">
+						</div>
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image19attributes" placeholder="image19attributes">
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image20url" placeholder="image20url">
+						</div>
+						<div class="form-group col">
+							<input class="form-control" type="text" name="image20attributes" placeholder="image20attributes">
+						</div>
+					</div>
+					<div class="form-group">
+						<button class="btn btn-lg btn-primary btn-block">Submit!</button>
+					</div>
+
+				</form>
+				<a href="/places">Go Back</a>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+<%- include("../partials/footer") %>
+
+
+
+	
+
+
+<%- include("../partials/footer") %>

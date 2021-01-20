@@ -1,0 +1,433 @@
+<%- include("../partials/header") %>
+
+<div class="container">
+
+	<div class="row">
+		<div class="col-md-8 offset-md-2 text-center">
+			<h1 style="text-align: center">Edit <%= campground.name %></h1>		
+				<form action="/places/<%=campground._id%>?_method=PUT" method="POST">
+					<div class="row">
+						<div class="form-group col">
+							<input class="form-control" type="text" name="name" value="<%= campground.name %>">
+						</div>
+						<div class="form-group col">
+							<input class="form-control" type="text" name="chineseName" value="<%= campground.chineseName %>">
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col">
+							<input class="form-control" type="text" name="type" value="<%= campground.type %>">
+						</div>
+						<div class="form-group col">
+							<input class="form-control" type="text" name="category" value="<%= campground.category %>">
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="location">Location</label>
+						<input class="form-control" type="text" name="location" value="<%= campground.location %>">
+					</div>
+					<div class="row">
+						<div class="form-group col">
+								<input class="form-control" type="text" name="mrtLine" value= "<%= campground.mrtLine %>">
+						</div>
+						<div class="form-group col">
+								<input class="form-control" type="text" name="mrtStation" value= "<%= campground.mrtStation %>">
+						</div>	
+							
+					</div>
+					<div class="row">
+						<div class="form-group col">
+							<input class="form-control" type="text" name="stars" value="<%= campground.stars %>">
+						</div>
+						<div class="form-group col">					   	  
+							<select class="custom-select" id="inputGroupSelect01" name="price" value="">							
+								<option selected="<%= campground.price %>"><%= campground.price %></option>
+								<option value="$$">$</option>
+								<option value="$$">$$</option>
+								<option value="$$$">$$$</option>
+								<option value="$$$$">$$$$</option>
+							  </select>
+						</div>
+					</div>
+					<div class="form-group">
+						<textarea class="form-control" rows="5" name="description"><%= campground.description %></textarea>
+					</div>					
+					<div class="form-group">
+						<input class="form-control" type="text" name="indexImage" value="<%= campground.indexImage %>">
+					</div>
+					<div class="row">
+								<div class="form-group col">
+                        			<input class="form-control" type="text" name="image1url"
+                        			<% if(campground.images[0]) { %>
+                          			value="<%= campground.images[0].image %>"
+                          			<% } else { %>
+                          			placeholder = image1url
+                           			<% } %> >
+                     				</div>
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image1attributes"
+                       				 <% if(campground.images[0]) { %>
+          							value="<%= campground.images[0].attributes %>"
+          							<% } else { %>
+          							placeholder = image1attributes
+          							 <% } %> >
+                     				</div>
+                  			</div>
+          					<div class="row">
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image2url"
+                        			<% if(campground.images[1]) { %>
+                          			value="<%= campground.images[1].image %>"
+                          			<% } else { %>
+                          			placeholder = image2url
+                           			<% } %> >
+                     				</div>
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image2attributes"
+                       				 <% if(campground.images[1]) { %>
+          							value="<%= campground.images[1].attributes %>"
+          							<% } else { %>
+          							placeholder = image2attributes
+          							 <% } %> >
+                     				</div>
+                  			</div>
+          					<div class="row">
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image3url"
+                        			<% if(campground.images[2]) { %>
+                          			value="<%= campground.images[2].image %>"
+                          			<% } else { %>
+                          			placeholder = image3url
+                           			<% } %> >
+                     				</div>
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image3attributes"
+                       				 <% if(campground.images[2]) { %>
+          							value="<%= campground.images[2].attributes %>"
+          							<% } else { %>
+          							placeholder = image3attributes
+          							 <% } %> >
+                     				</div>
+                  			</div>					
+							<div class="row">
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image4url"
+                        			<% if(campground.images[3]) { %>
+                          			value="<%= campground.images[3].image %>"
+                          			<% } else { %>
+                          			placeholder = image4url
+                           			<% } %> >
+                     				</div>
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image4attributes"
+                       				 <% if(campground.images[3]) { %>
+          							value="<%= campground.images[3].attributes %>"
+          							<% } else { %>
+          							placeholder = image4attributes
+          							 <% } %> >
+                     			</div>
+                  			</div>
+							<div class="row">
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image5url"
+                        			<% if(campground.images[4]) { %>
+                          			value="<%= campground.images[4].image %>"
+                          			<% } else { %>
+                          			placeholder = image5url
+                           			<% } %> >
+                     				</div>
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image5attributes"
+                       				 <% if(campground.images[4]) { %>
+          							value="<%= campground.images[4].attributes %>"
+          							<% } else { %>
+          							placeholder = image5attributes
+          							 <% } %> >
+                     			</div>
+                  			</div>
+							<div class="row">
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image6url"
+                        			<% if(campground.images[5]) { %>
+                          			value="<%= campground.images[5].image %>"
+                          			<% } else { %>
+                          			placeholder = image6url
+                           			<% } %> >
+                     				</div>
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image6attributes"
+                       				 <% if(campground.images[5]) { %>
+          							value="<%= campground.images[5].attributes %>"
+          							<% } else { %>
+          							placeholder = image6attributes
+          							 <% } %> >
+                     			</div>
+                  			</div>
+							<div class="row">
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image7url"
+                        			<% if(campground.images[6]) { %>
+                          			value="<%= campground.images[6].image %>"
+                          			<% } else { %>
+                          			placeholder = image7url
+                           			<% } %> >
+                     				</div>
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image7attributes"
+                       				 <% if(campground.images[6]) { %>
+          							value="<%= campground.images[6].attributes %>"
+          							<% } else { %>
+          							placeholder = image7attributes
+          							 <% } %> >
+                     			</div>
+                  			</div>
+							<div class="row">
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image8url"
+                        			<% if(campground.images[7]) { %>
+                          			value="<%= campground.images[7].image %>"
+                          			<% } else { %>
+                          			placeholder = image8url
+                           			<% } %> >
+                     				</div>
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image8attributes"
+                       				 <% if(campground.images[7]) { %>
+          							value="<%= campground.images[7].attributes %>"
+          							<% } else { %>
+          							placeholder = image8attributes
+          							 <% } %> >
+                     			</div>
+                  			</div>
+							<div class="row">
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image9url"
+                        			<% if(campground.images[8]) { %>
+                          			value="<%= campground.images[8].image %>"
+                          			<% } else { %>
+                          			placeholder = image9url
+                           			<% } %> >
+                     				</div>
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image9attributes"
+                       				 <% if(campground.images[8]) { %>
+          							value="<%= campground.images[8].attributes %>"
+          							<% } else { %>
+          							placeholder = image9attributes
+          							 <% } %> >
+                     			</div>
+                  			</div>
+							<div class="row">
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image10url"
+                        			<% if(campground.images[9]) { %>
+                          			value="<%= campground.images[9].image %>"
+                          			<% } else { %>
+                          			placeholder = image10url
+                           			<% } %> >
+                     				</div>
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image10attributes"
+                       				 <% if(campground.images[9]) { %>
+          							value="<%= campground.images[9].attributes %>"
+          							<% } else { %>
+          							placeholder = image10attributes
+          							 <% } %> >
+                     			</div>
+                  			</div>
+							<div class="row">
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image11url"
+                        			<% if(campground.images[10]) { %>
+                          			value="<%= campground.images[10].image %>"
+                          			<% } else { %>
+                          			placeholder = image11url
+                           			<% } %> >
+                     				</div>
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image11attributes"
+                       				 <% if(campground.images[10]) { %>
+          							value="<%= campground.images[10].attributes %>"
+          							<% } else { %>
+          							placeholder = image11attributes
+          							 <% } %> >
+                     			</div>
+                  			</div>
+							<div class="row">
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image12url"
+                        			<% if(campground.images[11]) { %>
+                          			value="<%= campground.images[11].image %>"
+                          			<% } else { %>
+                          			placeholder = image12url
+                           			<% } %> >
+                     				</div>
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image12attributes"
+                       				 <% if(campground.images[11]) { %>
+          							value="<%= campground.images[11].attributes %>"
+          							<% } else { %>
+          							placeholder = image12attributes
+          							 <% } %> >
+                     			</div>
+                  			</div>
+							<div class="row">
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image13url"
+                        			<% if(campground.images[12]) { %>
+                          			value="<%= campground.images[12].image %>"
+                          			<% } else { %>
+                          			placeholder = image13url
+                           			<% } %> >
+                     				</div>
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image13attributes"
+                       				 <% if(campground.images[12]) { %>
+          							value="<%= campground.images[12].attributes %>"
+          							<% } else { %>
+          							placeholder = image13attributes
+          							 <% } %> >
+                     			</div>
+                  			</div>
+							<div class="row">
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image14url"
+                        			<% if(campground.images[13]) { %>
+                          			value="<%= campground.images[13].image %>"
+                          			<% } else { %>
+                          			placeholder = image14url
+                           			<% } %> >
+                     				</div>
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image14attributes"
+                       				 <% if(campground.images[13]) { %>
+          							value="<%= campground.images[13].attributes %>"
+          							<% } else { %>
+          							placeholder = image14attributes
+          							 <% } %> >
+                     			</div>
+                  			</div>
+							<div class="row">
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image15url"
+                        			<% if(campground.images[14]) { %>
+                          			value="<%= campground.images[14].image %>"
+                          			<% } else { %>
+                          			placeholder = image15url
+                           			<% } %> >
+                     				</div>
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image15attributes"
+                       				 <% if(campground.images[14]) { %>
+          							value="<%= campground.images[14].attributes %>"
+          							<% } else { %>
+          							placeholder = image15attributes
+          							 <% } %> >
+                     			</div>
+                  			</div>
+							<div class="row">
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image16url"
+                        			<% if(campground.images[15]) { %>
+                          			value="<%= campground.images[15].image %>"
+                          			<% } else { %>
+                          			placeholder = image16url
+                           			<% } %> >
+                     				</div>
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image16attributes"
+                       				 <% if(campground.images[15]) { %>
+          							value="<%= campground.images[15].attributes %>"
+          							<% } else { %>
+          							placeholder = image16attributes
+          							 <% } %> >
+                     			</div>
+                  			</div>
+							<div class="row">
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image17url"
+                        			<% if(campground.images[16]) { %>
+                          			value="<%= campground.images[16].image %>"
+                          			<% } else { %>
+                          			placeholder = image17url
+                           			<% } %> >
+                     				</div>
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image17attributes"
+                       				 <% if(campground.images[16]) { %>
+          							value="<%= campground.images[16].attributes %>"
+          							<% } else { %>
+          							placeholder = image17attributes
+          							 <% } %> >
+                     			</div>
+                  			</div>
+							<div class="row">
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image18url"
+                        			<% if(campground.images[17]) { %>
+                          			value="<%= campground.images[17].image %>"
+                          			<% } else { %>
+                          			placeholder = image18url
+                           			<% } %> >
+                     				</div>
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image18attributes"
+                       				 <% if(campground.images[17]) { %>
+          							value="<%= campground.images[17].attributes %>"
+          							<% } else { %>
+          							placeholder = image18attributes
+          							 <% } %> >
+                     			</div>
+                  			</div>
+							<div class="row">
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image19url"
+                        			<% if(campground.images[18]) { %>
+                          			value="<%= campground.images[18].image %>"
+                          			<% } else { %>
+                          			placeholder = image19url
+                           			<% } %> >
+                     				</div>
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image19attributes"
+                       				 <% if(campground.images[18]) { %>
+          							value="<%= campground.images[18].attributes %>"
+          							<% } else { %>
+          							placeholder = image19attributes
+          							 <% } %> >
+                     			</div>
+                  			</div>
+							<div class="row">
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image20url"
+                        			<% if(campground.images[19]) { %>
+                          			value="<%= campground.images[19].image %>"
+                          			<% } else { %>
+                          			placeholder = image20url
+                           			<% } %> >
+                     				</div>
+                      			<div class="form-group col">
+                        			<input class="form-control" type="text" name="image20attributes"
+                       				 <% if(campground.images[19]) { %>
+          							value="<%= campground.images[19].attributes %>"
+          							<% } else { %>
+          							placeholder = image20attributes
+          							 <% } %> >
+                     			</div>
+                  			</div>
+							
+					
+                      		<div class="form-group">
+								<button class="btn btn-lg btn-primary btn-block">Submit!</button>
+							</div>
+
+				</form>
+				<a href="/places">Go Back</a>
+			</div>
+		</div>
+
+	</div>
+
+	
+	<%- include("../partials/footer") %>

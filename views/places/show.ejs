@@ -1,0 +1,173 @@
+<%- include("../partials/header") %>	
+		
+	<div class="container">
+		
+		<div class="row pt-md-3">
+			<div class="col-md-3 order-md-1 order-2">
+				<p class="lead d-none d-lg-block"><%= campground.name %> - <%= campground.chineseName %></p>
+				<div class="list-group rounded mb-3">
+					<li class="list-group-item"><%= campground.category %></li>
+					<li class="list-group-item"><%= campground.mrtLine %> Line - <%= campground.mrtStation %> Station</li>
+					<li class="list-group-item"><a href="https://www.google.com/maps/search/<%= campground.location %>" target="_blank"><%= campground.location %></a></li>
+				</div>			
+				<div id="map2"></div>
+			</div>
+		
+			
+			
+			<div class="col-md-9 order-1 order-md-2">
+				<div class="card rounded mb-3">					
+					<div class="galleria" style="height: auto, width: auto;">						
+						<% for (var i = 0; i < campground.images.length; i++) { %>
+							<img class="img-responsive" src="<%= campground.images[i].image %>" alt="<%= campground.images[i].attributes %>">
+						<% }; %>						
+					</div>				
+					<script>
+						(function() {
+							Galleria.configure({
+							transition: 'fade',
+							imageCrop: "landscape",
+							height: 0.75,
+							showInfo: true,
+							// _toggleInfo: false
+							});
+						Galleria.loadTheme('https://cdnjs.cloudflare.com/ajax/libs/galleria/1.5.7/themes/classic/galleria.classic.min.js');                
+						Galleria.run('.galleria');
+							}());
+					</script>				
+					<div class="card-body pt-0">
+						<div class="card-title mb-md-2">
+							<div class="container-fluid">						
+								<div class="row">
+									<div class="col-md-8 d-flex p-0">
+										<h3 class="mx-auto ml-md-0 my-auto campground-name"><%= campground.name %> - <%= campground.chineseName %></h3>
+									</div>
+									<div class="col-md-4 p-0 my-md-auto">
+										<table class="mx-auto mr-md-0">
+											<tr>
+												<td>
+													<%	if(campground.stars === "1") { %>
+													<img class="star d-block mx-auto mx-md-0 mt-1 mt-md-0 float-md-right" src="/images/stars/one-star.png">	
+													<% } else if (campground.stars === "1.5") { %>
+													<img class="star d-block mx-auto mx-md-0 mt-1 mt-md-0 float-md-right" src="/images/stars/one-and-half-star.png">	
+													<% } else if (campground.stars === "2") { %>
+													<img class="star d-block mx-auto mx-md-0 mt-1 mt-md-0 float-md-right" src="/images/stars/two-star.png">	
+													<% } else if (campground.stars === "2.5") { %>
+													<img class="star d-block mx-auto mx-md-0 mt-1 mt-md-0 float-md-right" src="/images/stars/two-and-half-star.png">				
+													<% } else if (campground.stars === "3") { %>
+													<img class="star d-block mx-auto mx-md-0 mt-1 mt-md-0 float-md-right" src="/images/stars/three-star.png">				
+													<% } else if (campground.stars === "3.5") { %>
+													<img class="star d-block mx-auto mx-md-0 mt-1 mt-md-0 float-md-right" src="/images/stars/three-and-half-star.png">
+													<% } else if (campground.stars === "4") { %>
+													<img class="star d-block mx-auto mx-md-0 mt-1 mt-md-0 float-md-right" src="/images/stars/four-star.png">
+													<% } else if (campground.stars === "4.5") { %>
+													<img class="star d-block mx-auto mx-md-0 mt-1 mt-md-0 float-md-right" src="/images/stars/four-and-half-star.png">
+													<% } else if (campground.stars === "5") { %>
+													<img class="star d-block mx-auto mx-md-0 mt-1 mt-md-0 float-md-right" src="/images/stars/five-star3.png">
+													<% } %>													
+												</td>						
+											</tr>
+											<tr><td>
+												<%	if(campground.price === "$") { %>
+												<img class="float-md-right dollar-sign d-block mx-auto mx-md-0 mt-2 mt-md-2" src="/images/dollarsigns/onedollarsign3.png">	
+												<% } else if (campground.price === "$$") { %>
+												<img class="float-md-right dollar-sign d-block mx-auto mx-md-0 mt-2 mt-md-2" src="/images/dollarsigns/twodollarsign3.png">	
+												<% } else if (campground.price === "$$$") { %>
+												<img class="float-md-right dollar-sign d-block mx-auto mx-md-0 mt-2 mt-md-2" src="/images/dollarsigns/threedollarsign3.png">	
+												<% } else if (campground.price === "$$$$") { %>
+												<img class="float-md-right dollar-sign d-block mx-auto mx-md-0 mt-2 mt-md-2" src="/images/dollarsigns/fourdollarsign3.png">				
+												<% } %>											
+											</td></tr>															
+
+										</table>
+
+									</div>									
+
+								</div>
+							</div>
+						</div>
+
+						<hr>
+						<p class="card-text"><%- campground.description %></p>
+						<p><em>Submitted by: <%= campground.author.username %></em></p>
+						<% if(currentUser && campground.author.id.equals(currentUser._id)  || currentUser && currentUser.isAdmin) { %>
+							<a class="btn btn-warning" href="/places/<%= campground._id %>/edit">Edit</a>
+							<form class="delete-form" action="/places/<%= campground._id %>?_method=DELETE" method="POST">
+								<button class="btn btn-danger">
+									Delete Place
+								</button>
+							</form>
+						<% } %>
+					</div>
+				</div>
+			</div>
+		</div>		
+		<div class="row">
+			<div class="col-md-3 order-4 order-md-3">
+
+			</div>
+			<div class="col-md-9 order-3 order-md-4">
+				<div class="text-right">
+					<a class="btn btn-success" href="#"><strike>Add New Comment</strike></a>
+				</div>
+				<div class="card rounded mb-4">
+						<% if(campground.comments.length < 1) { %>
+						<h6 class="card-body"> Comments are launching soon </h6>	
+						<%	}  %>
+						<ul class="list-group list-group-flush">
+						<% campground.comments.forEach(function(comment){ %>
+							<li class="list-group-item">
+
+								<strong><%= comment.author.username %></strong>
+								<span class="float-right">10 days ago</span>
+								<p>
+									<%= comment.text %>
+								</p>
+								<% if(currentUser && comment.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin) { %>
+									<a class="btn btn-xs btn-warning" href="/places/<%=campground._id %>/comments/<%=comment._id%>/edit">Edit</a>
+									<form class="delete-form" action="/places/<%=campground._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
+										<input type="submit" class="btn btn-xs btn-danger" value="Delete Comment">	
+									</form>
+								<% } %>	
+							</li>
+						<% }) %>	
+						</ul>
+					</div>										
+				</div>		
+
+			</div>
+		</div>
+
+		<script>
+		  function initMap() {
+			var lat = <%= campground.lat %>;
+			var lng = <%= campground.lng %>;
+			var center = {lat: lat, lng: lng };
+			var map2 = new google.maps.Map(document.getElementById('map2'), {
+				zoom: 13,
+				center: center,
+				scrollwheel: false
+			});
+			var contentString = `
+			  <strong><%= campground.name %> - <%= campground.chineseName %><br/>
+			  <a href="https://www.google.com/maps/search/<%= campground.location %>" target="_blank" class="btn btn-primary btn-sm">Directions</a>			  			  
+			`
+			var infowindow = new google.maps.InfoWindow({
+			  content: contentString
+			});
+			var marker = new google.maps.Marker({
+				position: center,
+				map: map2
+			});
+			marker.addListener('click', function() {
+			  infowindow.open(map2, marker);
+			});
+		  }
+		</script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTunrBpdg9D-AyhdfA-2fvCB4IAKIKwAo&callback=initMap"></script>
+
+
+
+
+
+<%- include("../partials/footer") %>

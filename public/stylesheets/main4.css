@@ -1,0 +1,315 @@
+/* Global */
+
+html {
+	
+	min-height: 100%;
+	position: relative;
+}
+
+body {
+  /* Margin bottom by footer height */
+	
+  margin-bottom: 105px;
+  font-family: 'Roboto', sans-serif;
+ 
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 105px;
+  background-color: #f5f5f5;
+}
+
+.footer p {
+	margin-bottom: 0;
+}
+
+/* navbar */
+.mainnavbar {
+	padding: .1rem 1rem;
+	background-color: #F7F7F7;
+}
+
+.navbar-brand {
+	font-family: 'Yellowtail', cursive;
+	font-size: 2.2rem;
+	padding-bottom: 0;
+}
+
+
+nav img {
+	width: 34px;
+	height: auto;
+	padding-bottom: .9rem
+}
+
+
+
+
+/* pagination */
+.pagination {
+	margin: 1rem auto 4rem;
+}
+				
+
+
+
+/* jumbotron */
+
+.jumbotron-text-heading {
+	margin-top: 1rem;
+	font-size: 2.4rem;
+	font-weight: 700;
+}
+
+
+
+.vertical-align-left-items, .vertical-align-right-items{
+	display: flex;
+  	flex-direction: column;
+  	justify-content: center;	
+}
+
+.jumbotron {
+		padding-bottom: 6rem;
+		margin-bottom: 0;
+		background-image: url('/images/RestaurantJumbotron.jpg');
+		background-size: cover;
+		background-position: center;		
+		color: white;
+	}
+
+.browse, .main-search {
+	width: 100%;
+}
+
+@media (min-width: 768px){
+	.vertical-align-left-items {
+		padding-right: 3.5rem;
+		margin: 2rem 0 0 0;
+	}
+	
+	.vertical-align-right-items {
+		padding-left: 3.5rem;
+		margin: 2rem 0 0 0;
+	}
+	
+	.choice-border {
+		border-left: 1px solid white;
+		height: 80px;
+	}
+	
+	.jumbotron-text-sub {
+		font-size: 1.5rem;
+		margin-top: 1.2rem;
+	}
+	.index-star {
+		max-width: 67%;
+		align-self: center;
+}
+
+	.dollarsignz {
+		align-self: center;
+		max-width: 33%
+}
+	
+	
+}
+
+@media (max-width: 768px) {
+	.vertical-align-right-items {
+		margin: .5rem 0 0 0;
+	}
+	.vertical-align-left-items {		
+		margin: 1rem 0 0 0;
+	}
+	.navbar-brand {
+		font-size: 1.5rem;
+	}
+	nav img {
+		width: 25px;
+		height: auto;
+		padding-bottom: .7rem
+	}
+	
+	.jumbotron {
+		padding-top: 2rem;
+		padding-bottom: 2.5rem;
+	}
+	
+	.jumbotron-text-heading {
+		margin-top: 0;
+		font-size: 1.9rem;
+		font-weight: 700;
+	}
+	
+	.jumbotron-text-sub {
+		font-size: 1rem;
+		margin-top: .6rem;
+	}
+	.index-star {
+		max-width: 50%;
+		align-self: center;
+	}
+
+	.dollarsignz {
+		align-self: center;
+		max-width: 29%
+	}
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 420px;
+  padding: 15px;
+  margin: auto;
+}
+
+/* Campround Index */
+
+.thumbnail img {
+	width: 100%;
+}
+
+.embed-responsive .card-img-top {
+    object-fit: cover;
+}
+
+.thumbnail {
+	padding: 0;
+}
+
+.thumbnail .caption-full {
+	padding: 9px;
+}
+
+
+
+.delete-form {
+	display: inline;
+}
+/* faceted search nav bar */
+.facetedsearchbuttons {
+	margin: 3px;
+}
+
+
+
+.facetedsearchicon{
+    width: 25px;
+    height: auto;
+    padding-bottom: 0px;
+	}
+
+@media (max-width: 992px) {
+.checked {
+	height:auto;
+	min-height:24px;
+	height:auto !important;        /* for IE as it does not support min-height */     
+	padding: 10px 0;	
+	}
+	
+.navbar-collapse.collapse.show {
+	margin-top: 1rem;
+	padding: 0 1.5rem
+	}
+}
+
+
+/* faceted search */
+
+.secret {
+	color: white;
+}
+.shownclass {
+	margin-right: 1rem;
+}
+
+@media (min-width: 992px) {
+.facetedsearchnav {
+	padding-top: 15px;
+	background-color: #f5f5f5;
+}	
+	
+.checked {
+	height:auto;
+	min-height:30px;
+	height:auto !important;        /* for IE as it does not support min-height */
+	height:30px;     
+	padding: 12px 0;	
+	}
+}
+
+.Brownstations {
+  color: #80391e;
+}
+
+.Redstations {
+  color: red;
+}
+
+.Greenstations{
+  color: green;
+}
+
+.Orangestations{
+  color: orange;
+}
+.Bluestations{
+  color: blue;
+}
+
+.mrtstations :checkbox {
+  height: 100px;
+}
+
+.allmrtstations .table td {
+  padding: 0 0 0 0;
+  border: none
+}
+
+.allmrtstations .stations .table {
+	margin-bottom: 0;
+}
+
+.choice-mrtstation{
+  margin-right: 4px;
+}
+
+.allmrtstations div div label {
+  display: inline;
+  margin-bottom: 0; 
+/* Fixes any weird issues in Firefox and IE */
+  vertical-align: middle; 
+}
+
+
+.scrollBox {
+  height:77vh;
+  overflow-y: scroll;
+}
+
+
+/* Google Maps maps page */    
+#map {
+        height: 100%;
+		width: 100%;
+		margin-top: 1rem;
+	}
+
+.fill {
+	height: 77vh;
+	padding-bottom: .8rem;
+	margin-bottom: 12rem;	
+}
+
+.marker-stars {
+	width: 30%;
+}
+
+.gm-style .gm-style-iw {
+	line-height: 1.3rem;
+}

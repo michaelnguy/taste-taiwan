@@ -1,0 +1,38 @@
+<%- include ("./partials/header") %>
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 offset-md-2 text-center">
+			<h2>
+				Contact Us
+			</h2>
+			<form class="form-group" action="/contact" method="POST">
+				<div>				
+					<label class="float-left mt-2">Name</label>
+						<input name="name" type="text" class="form-control" required>
+					
+				</div>
+				<div>
+					<label class="float-left mt-2">Email</label>
+						<input name="email" type="email" class="form-control" required>
+					
+				</div>
+					
+				<div>
+					<label class="float-left mt-2">Message</label>
+						<textarea name="message" cols="40" rows="10" class="form-control" required></textarea>
+					
+				</div>					
+				<div>
+					<input type="submit" class="btn btn-primary mt-4">
+				</div>
+				
+		
+			</form> 
+		</div>
+	</div>
+
+
+
+<%- include ("./partials/footer") %>

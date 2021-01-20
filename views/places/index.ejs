@@ -1,0 +1,242 @@
+<%- include ("../partials/header") %>
+
+    
+        
+<div class="container-fill">
+	<header class="jumbotron jumbotron-fluid">
+		<div class="container text-center">
+			<div class="jumbotron-text-heading">
+				Fill up good
+			</div>
+			<div class="jumbotron-text-sub">
+				From street stalls to world-class fine dining, find the best of what Taiwan has to
+				offer.
+			</div>
+			<div class="row">
+				<div class="col-md-6 d-flex vertical-align-left-items">
+					<div class="">
+						<form class="main-search d-inline-block" action="/" method="GET">
+							<div class="input-group">
+								<input
+									type="text"
+									class="form-control border border-right-0"
+									name="search"
+									placeholder="Enter a name, district, cuisine, mrt station..."
+								/>
+								<span class="input-group-append">
+									<button class="btn btn-dark border border-left-0" type="submit">
+										<i class="fa fa-search"></i>
+									</button>
+								</span>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="d-flex mt-2 d-md-none mx-auto">
+					or
+				</div>
+
+				<div class="col-md-6 d-flex choice-border vertical-align-right-items">
+					<div class="browse d-inline-block">
+						<a
+							href="/map"
+							class="my-auto btn btn-success browse"
+							role="button"
+							aria-disabled="true"
+							>Browse the map for restaurants near you.</a
+						>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+</div>
+
+
+
+<div class="container-fill px-5">
+	<div class="row" id="campground-grid">
+		
+
+		<div class="col-md-12">
+			<div class="d-flex flex-wrap align-items-center checked">
+				<div class="float-right secret">
+					
+				</div>
+			</div>
+		</div>
+	<div class="col-lg-2 mb-4">	
+	<nav class="navbar navbar-expand-lg facetedsearchnav navbar-light">
+	  <button class="navbar-toggler facetedsearchbutton" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		<img class="facetedsearchicon" src="/images/facetedsearchicon.png"> Filter
+	  </button>
+  	  <div class="collapse navbar-collapse" id="navbarNav">	
+		
+			<%- include ("../partials/facetedsearch") %>
+		
+	  </div>
+	</nav>
+	</div>	
+		
+		
+		
+		<div class="col-lg-10">
+		<div class="row text-center">
+			<% if(noMatch !== null) { %>
+				<div class="mt-5 mx-auto">
+					<h3>
+						<%= noMatch %>
+					</h3>
+				</div>
+			<% } %>
+			
+			
+		 <% campgrounds.forEach(function(campground){ %>
+		<div class="col-lg-3 col-md-6 mb-4">
+			<div class="card">
+				<a href="/places/<%= campground._id %>">
+					<div class="embed-responsive embed-responsive-4by3">
+						<img
+							class="card-img-top embed-responsive-item"
+							src="<%= campground.indexImage %>"
+							alt="<%= campground.name %>"
+						/>
+					</div>
+				</a>
+
+				<div class="card-body px-0">
+					<div class="d-flex flex-column">
+						<div><h5 class="card-title mx-auto"><%= campground.name %></h5></div>
+						<div class="d-flex justify-content-between my-1">
+							<div>
+								<% if(campgrounds.stars === "1") { %>
+								<img class="index-star" src="/images/stars/one-star.png" /><br />
+								<% } else if (campground.stars === "1.5") { %>
+								<img
+									class="index-star"
+									src="/images/stars/one-and-half-star.png"
+								/><br />
+								<% } else if (campground.stars === "2") { %>
+								<img class="index-star" src="/images/stars/two-star.png" /><br />
+								<% } else if (campground.stars === "2.5") { %>
+								<img
+									class="index-star"
+									src="/images/stars/two-and-half-star.png"
+								/><br />
+								<% } else if (campground.stars === "3") { %>
+								<img class="index-star" src="/images/stars/three-star.png" /><br />
+								<% } else if (campground.stars === "3.5") { %>
+								<img
+									class="index-star"
+									src="/images/stars/three-and-half-star.png"
+								/><br />
+								<% } else if (campground.stars === "4") { %>
+								<img class="index-star" src="/images/stars/four-star.png" /><br />
+								<% } else if (campground.stars === "4.5") { %>
+								<img
+									class="index-star"
+									src="/images/stars/four-and-half-star.png"
+								/><br />
+								<% } else if (campground.stars === "5") { %>
+								<img class="index-star" src="/images/stars/five-star3.png" /><br />
+								<% } %>
+							</div>
+							<div>
+								<% if(campground.price === "$") { %>
+								<img
+									class="dollarsignz"
+									src="/images/dollarsigns/onedollarsign3.png"
+								/>
+								<% } else if (campground.price === "$$") { %>
+								<img
+									class="dollarsignz"
+									src="/images/dollarsigns/twodollarsign3.png"
+								/>
+								<% } else if (campground.price === "$$$") { %>
+								<img
+									class="dollarsignz"
+									src="/images/dollarsigns/threedollarsign3.png"
+								/>
+								<% } else if (campground.price === "$$$$") { %>
+								<img
+									class="dollarsignz"
+									src="/images/dollarsigns/fourdollarsign3.png"
+								/>
+								<% } %>
+							</div>
+						</div>
+
+						<div class="my-1"><span><%= campground.category %></span></div>
+						<div class="my-1"><span><%= campground.mrtStation %> Station</span></div>
+					</div>
+				</div>
+				<div class="card-footer">
+					<a href="/places/<%= campground._id %>" class="btn btn-dark btn-sm mx-auto"
+						>More info</a
+					>
+				</div>
+			</div>
+		</div>
+		<% }); %>
+		</div>
+		</div>
+	</div>
+</div>
+
+	
+		<nav class="pagination" aria-label="Page navigation">
+			<!-- build href here-->
+			
+		
+				
+		
+			
+			
+			<% if (pages && pages > 0) { %>
+			<ul class="pagination text-center justify-content-center mb-8">
+				<% if (current == 1) { %>
+				<li class="page-item disabled"><a class="page-link">First</a></li>
+				<% } else { %>
+				<li><a class="page-link" href="/<%if(search){%>?search=<%=search%><%}%><%if(facetedSearch){%>?<%=facetedSearch%><%}%>">First</a></li>
+				<% } %>
+
+				<% if (current == 1) { %>
+				<li class="page-item disabled"><a class="page-link">«</a></li>
+				<% } else { %>
+				<li><a class="page-link" href="/?page=<%= Number(current) - 1 %><%if(search){%>&search=<%=search%><%}%><%if(facetedSearch){%>&<%=facetedSearch%><%}%>">«</a></li>
+				<% } %>
+
+				<% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
+				<% if (i !== 1) { %>
+				<li class="page-item disabled"><a class="page-link">...</a></li>
+				<% } %>
+				<% for (; i <= (Number(current) + 4) && i <= pages; i++) { %>
+				<% if (i == current) { %>
+				<li class="active"><a class="page-link"><%= i %></a></li>
+				<% } else { %>
+				<li><a class="page-link" href="/?page=<%= i %><%if(search){%>&search=<%=search%><%}%><%if(facetedSearch){%>&<%=facetedSearch%><%}%>"><%= i %></a></li>
+				<% } %>
+				<% if (i == Number(current) + 4 && i < pages) { %>
+				<li class="page-item disabled"><a class="page-link">...</a></li>
+				<% } %>
+				<% } %>
+
+				<% if (current == pages) { %>
+				<li class="page-item disabled"><a class="page-link">»</a></li>
+				<% } else { %>
+				<li><a class="page-link" href="/?page=<%= Number(current) + 1 %><%if(search){%>&search=<%=search%><%}%><%if(facetedSearch){%>&<%=facetedSearch%><%}%>">»</a></li>
+				<% } %>
+
+				<% if (current == pages) { %>
+				<li class="page-item disabled"><a class="page-link">Last</a></li>
+				<% } else { %>
+				<li><a class="page-link" href="/?page=<%= pages %><%if(search){%>&search=<%=search%><%}%><%if(facetedSearch){%>&<%=facetedSearch%><%}%>">Last</a></li>
+				<% } %>
+			</ul>
+			<% } %>
+		</nav>
+	
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="/scripts/facetedsearchjquery.js"></script>
+<%- include ("../partials/footer") %>
